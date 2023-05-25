@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "createP": "cd create && node nodeCreate.js",
     "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://wuyve.github.io/cats-app",
   "dependencies": {
