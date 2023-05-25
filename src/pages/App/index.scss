@@ -1,0 +1,18 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f9f9;
+}
+.app-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.app-top,
+.app-bottom {
+  background-color: #FFF;
+}
+.app-content {
+  padding: 10px;
+}

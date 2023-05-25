@@ -1,0 +1,95 @@
+.todo-page {
+  height: calc(100vh - 58px);
+  background-color: #F7F7F7;
+  padding: 4px;
+  overflow: auto;
+  &-top {
+    background-color: #FFF;
+    padding: 10px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #2b9fe7;
+  }
+  &-cards {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &-li {
+      width: 150px;
+      height: 80px;
+      margin: 6px;
+      color: #FFF;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+  &-label {
+    background: #FFF;
+    height: 30px;
+    padding: 4px 10px;
+    margin: 10px 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-btn {
+      color: #2b9fe7;
+      font-size: 14px;
+
+    }
+  }
+  &-list {
+    background: #FFF;
+    padding: 4px 10px;
+    margin: 10px 8px;
+    border-radius: 8px;
+    height: 260px;
+    overflow: auto;
+    &-li {
+      border-bottom:  1px solid #F7F7F7;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      padding: 4px 0 4px 4px;
+      .adm-swipe-action-track {
+        .adm-swipe-action-content > div {
+          display: flex;
+          span {
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+      }
+      .adm-swipe-action-actions-right {
+        button {
+          font-size: 12px;
+        }
+      }
+      &-icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        border-radius: 50%;
+      }
+      
+    }
+    &-li:last-child {
+      border-bottom: none;
+    }
+  }
+}

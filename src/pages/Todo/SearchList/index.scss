@@ -1,0 +1,69 @@
+.todo-event-search-page {
+  height: calc(100vh - 80px);
+  background-color: #F7F7F7;
+  padding-top: 4px;
+
+  &-list {
+    background: #FFF;
+    padding: 4px 10px;
+    margin: 10px 8px;
+    border-radius: 8px;
+    height: 100%;
+    overflow: auto;
+
+    &-li {
+      border-bottom: 1px solid #F7F7F7;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      padding: 4px 0 4px 4px;
+
+      .adm-swipe-action-track {
+        .adm-swipe-action-content>div {
+          display: flex;
+
+          span {
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .adm-swipe-action-actions-right {
+        button {
+          font-size: 12px;
+        }
+      }
+
+      &-icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        border-radius: 50%;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .state {
+        font-size: 12px;
+        margin-right: 5px;
+      }
+
+      .title {
+        display: inline-block;
+        width: 256px;
+      }
+    }
+
+    &-li:last-child {
+      border-bottom: none;
+    }
+  }
+}
