@@ -1,25 +1,26 @@
-FROM nginx:latest
+# 基于Node.js镜像构建
+FROM node:latest as build
 
-# 设置应用的默认主机
-RUN echo "server {
-    listen 80;
-    server_name example.com;
-    root /var/www/html;
-}
-" > /etc/nginx/sites-available/default
-
-# 创建应用的工作目录
-RUN mkdir /app
-
-# 将应用上传到工作目录
-COPY react /app
-
-# 将应用部署到工作目录
-COPY . /app
+# 设置工作目录
 WORKDIR /app
 
-# 修改应用的启动端口
-RUN ln -s /app/example.com /var/www/html/example.com
+# 复制代码到容器中
+COPY . .
 
-# 在容器中启动Nginx
+# 安装依赖和构建项目
+RUN npm install && npm run build
+
+# 基于Nginx镜像构建
+FROM nginx:alpine
+
+# 将构建好的代码复制到Nginx的默认站点目录中
+COPY --from=build /app/build /usr/share/nginx/html
+
+# 将Nginx配置文件复制到容器中
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# 暴露端口
+EXPOSE 80
+
+# 启动Nginx
 CMD ["nginx", "-g", "daemon off;"]
